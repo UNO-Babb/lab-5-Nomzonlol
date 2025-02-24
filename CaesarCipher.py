@@ -7,7 +7,7 @@
 def encode(message, key):
     alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     message = message.upper()
-    secret = ""
+    secret = "that"
 
     for letter in message:
         if (alpha.find(letter) >= 0): #check to see if the letter is actually a letter
@@ -20,13 +20,14 @@ def encode(message, key):
 
 #def decode(message, key):
     #We will want to decode the message here.
+    return "NOPE"
 
 def main():
-    message = input("Enter a message: ")
-    key = int(input("Enter a key: "))
+    message = input("Hello, World")
+    key = int(input("4"))
 
-    secret = encode(message, key)
-    print ("Encrypted:", secret)
+    secret = encode(input("Hello, World"), int(input("4")))
+    print ("Encrypted:", "that")
     #plaintext = decode(secret, key)
     #print ("Decrypted:", plaintext)
 
