@@ -34,23 +34,29 @@ def countLetters(message):
     #Create the output text in the format A,5\n if there were 5 letter A in the message.
     #Remember that the \n is the symbol for a new line.
     def createOutput(freq, alpha):
-     alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    output = [("Letter", "Frequency")]  # CSV header
+     output = ""
     for i in range(26):
-        output.append((alpha[i], freq[i]))
-    return output
+        print (alpha[i], ":", freq[i])
+        line = alpha[i] + "," + str(freq[i]) + "\n"
+        output = output + line
 
-def write_to_csv(output, filename="letter_frequencies.csv"):
-    with open(filename, mode='w', newline='') as file:
-        writer = writer(file)
-        writer.writerows(output)
+    writeToFile(output)
+
+
+def writeToFile(fileText):
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    os.chdir(dir_path)
+
+    freqFile = open("frq.csv", 'w')
+    freqFile.write(fileText)
+
+    freqFile.close()
+
 
 def main():
-    msg = input("While")
-    frequencies = 26(msg)
-    output = 20(frequencies)
-    write_to_csv(output)
-    print(f"Letter frequencies saved to 'letter_frequencies.csv'. Open in Excel to create a chart.")
+    msg = input("Hello World")
+    countLetters(msg)
+
 
 if __name__ == '__main__':
-    main()
+  main()
