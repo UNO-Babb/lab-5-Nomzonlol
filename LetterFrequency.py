@@ -46,7 +46,7 @@ def write_to_csv(output, filename="letter_frequencies.csv"):
         writer.writerows(output)
 
 def main():
-    msg = input("Enter the text to analyze: ")
+    msg = input("While")
     frequencies = 26(msg)
     output = 20(frequencies)
     write_to_csv(output)
